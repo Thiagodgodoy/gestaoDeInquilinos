@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Adicionar inquilino{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Adicione um novo inquilino:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-primary btn-lg" value="Criar inquilino">
+    </form>
+</div>
+{% endblock %}

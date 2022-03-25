@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block title %}Lista de Tarefas{% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1>{{inquilino.nome}}</h1><br>
+        <h2>Dados do inquilino: </h2><br>
+        <h4>O CPF registrado nesse nome é: {{inquilino.cpf}}</h4>
+        <h4>O valor do aluguel deste locatário é de: R$ {{inquilino.aluguel}}</h4>
+        <h4>O tamanho da kitnet alugada por esse locatário é: {{inquilino.tamanho}}</h4>
+        {% if inquilino.status == True %}
+            <h4>Atualmente está com {{inquilino.atraso}} mês de atraso </h4>
+        {% else %}
+            <h4>O inquilino não possui dívidas</h4>
+        {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Editando '{{inquilino.nome}}'{% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1>Editando '{{inquilino.nome}}'</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-primary btn-lg" value="Editar inquilino">
+        </form>
+    </div>
+{% endblock %}
